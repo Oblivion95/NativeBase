@@ -1,3 +1,11 @@
+export const Popover = {
+  baseStyle: () => ({
+    _overlay: {
+      unmountOnExit: true,
+    },
+  }),
+};
+
 export const PopoverCloseButton = {
   baseStyle: () => ({
     position: 'absolute',
@@ -43,11 +51,9 @@ export const PopoverBody = {
   baseStyle: () => ({
     p: '3',
     shadow: '6',
-    _light: {
-      bg: 'muted.50',
-      _text: {
-        color: 'text.900',
-      },
+    bg: 'muted.50',
+    _text: {
+      color: 'text.900',
     },
     _dark: {
       bg: 'muted.800',
@@ -62,11 +68,9 @@ export const PopoverContent = {
   baseStyle: () => ({
     //TODO: Box inside PopperContent is not able to resolve shadow
     // shadow: '6',
-    _light: {
-      borderColor: 'muted.300',
-      _text: {
-        color: 'text.900',
-      },
+    borderColor: 'muted.300',
+    _text: {
+      color: 'text.900',
     },
     _dark: {
       borderColor: 'muted.700',
@@ -91,14 +95,10 @@ export const PopoverHeader = {
       fontSize: 'md',
       fontWeight: '700',
       lineHeight: 'sm',
+      color: 'text.900',
     },
-    _light: {
-      bg: 'muted.50',
-      borderColor: 'muted.300',
-      _text: {
-        color: 'text.900',
-      },
-    },
+    bg: 'muted.50',
+    borderColor: 'muted.300',
     _dark: {
       bg: 'muted.800',
       borderColor: 'muted.700',
@@ -111,10 +111,8 @@ export const PopoverHeader = {
 
 export const PopoverArrow = {
   baseStyle: () => ({
-    _light: {
-      bg: 'muted.50',
-      borderColor: 'muted.300',
-    },
+    bg: 'muted.50',
+    borderColor: 'muted.300',
     _dark: {
       bg: 'muted.800',
       borderColor: 'muted.700',
@@ -131,10 +129,8 @@ export const PopoverFooter = {
       justifyContent: 'flex-end',
       flexWrap: 'wrap',
       borderTopWidth: 1,
-      _light: {
-        bg: 'muted.50',
-        borderColor: 'muted.300',
-      },
+      bg: 'muted.50',
+      borderColor: 'muted.300',
       _dark: {
         bg: 'muted.800',
         borderColor: 'muted.700',

@@ -40,6 +40,7 @@ const Menu = (
     _overlay,
     _presenceTransition,
     _backdrop,
+    useRNModal,
     ...resolvedProps
   } = usePropsResolution('Menu', props);
   const handleOpen = React.useCallback(() => {
@@ -76,6 +77,7 @@ const Menu = (
   if (useHasResponsiveProps(resolvedProps)) {
     return null;
   }
+
   return (
     <>
       {updatedTrigger()}
@@ -83,8 +85,8 @@ const Menu = (
         isOpen={isOpen}
         onRequestClose={handleClose}
         useRNModalOnAndroid
+        useRNModal={useRNModal}
         {..._overlay}
-        unmountOnExit
       >
         <PresenceTransition visible={isOpen} {..._presenceTransition}>
           <Popper

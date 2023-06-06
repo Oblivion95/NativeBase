@@ -4,9 +4,7 @@ const baseStyle = {
   py: 2,
   borderRadius: 'sm',
   shadow: 6,
-  _light: {
-    bg: 'muted.50',
-  },
+  bg: 'muted.50',
   _dark: {
     bg: 'muted.800',
   },
@@ -20,7 +18,9 @@ const baseStyle = {
     exit: { opacity: 0, transition: { duration: 150 } },
     style: StyleSheet.absoluteFill,
   },
-  _overlay: {},
+  _overlay: {
+    unmountOnExit: true,
+  },
   _backdrop: {
     bg: 'transparent',
   },
@@ -35,9 +35,7 @@ export const MenuGroup = {
     _title: {
       fontSize: 'xs',
       textTransform: 'uppercase',
-      _light: {
-        color: 'text.500',
-      },
+      color: 'text.500',
       _dark: {
         color: 'text.400',
       },
@@ -60,35 +58,30 @@ export const MenuItem = {
     _icon: {
       size: 4,
       opacity: 0,
+      color: 'muted.500',
     },
-    _light: {
+    _text: {
+      color: 'text.900',
+    },
+    _disabled: {
       _text: {
-        color: 'text.900',
+        color: 'text.400',
       },
-      _disabled: {
-        _text: {
-          color: 'text.400',
-        },
-      },
-      _hover: {
-        bg: 'muted.200',
-      },
-      _focus: {
+    },
+    _hover: {
+      bg: 'muted.200',
+    },
+    _focus: {
+      bg: 'muted.300',
+    },
+    _pressed: {
+      bg: 'muted.400',
+    },
+    _focusVisible: {
+      _web: {
+        outlineWidth: '0',
+        style: { boxShadow: `none` },
         bg: 'muted.300',
-      },
-      _pressed: {
-        bg: 'muted.400',
-      },
-
-      _icon: {
-        color: 'muted.500',
-      },
-      _focusVisible: {
-        _web: {
-          outlineWidth: '0',
-          style: { boxShadow: `none` },
-          bg: 'muted.300',
-        },
       },
     },
     _dark: {
@@ -113,12 +106,12 @@ export const MenuItem = {
       _icon: {
         color: 'muted.400',
       },
-    },
-    _focusVisible: {
-      _web: {
-        outlineWidth: '0',
-        style: { boxShadow: `none` },
-        bg: 'muted.600',
+      _focusVisible: {
+        _web: {
+          outlineWidth: '0',
+          style: { boxShadow: `none` },
+          bg: 'muted.600',
+        },
       },
     },
     _checked: {

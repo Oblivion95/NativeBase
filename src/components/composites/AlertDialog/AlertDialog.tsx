@@ -37,6 +37,8 @@ const AlertDialog = (
     _backdropFade,
     _fade,
     _slide,
+    _overlay,
+    useRNModal,
     ...restThemeProps
   } = usePropsResolution('AlertDialog', rest);
 
@@ -64,13 +66,15 @@ const AlertDialog = (
   if (useHasResponsiveProps(rest)) {
     return null;
   }
+
   return (
     <Overlay
       isOpen={visible}
       onRequestClose={handleClose}
       isKeyboardDismissable={isKeyboardDismissable}
       useRNModalOnAndroid
-      unmountOnExit
+      useRNModal={useRNModal}
+      {..._overlay}
     >
       <AlertDialogContext.Provider
         value={{
